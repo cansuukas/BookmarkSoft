@@ -1,0 +1,17 @@
+﻿@model List<Post>
+
+<div class="widget widget-trending-posts">
+    <h3 class="widget-title">Trending Posts</h3>
+    <div class="wd-posts">
+        @foreach (var item in Model)
+        {
+            <div class="wd-post">
+                <img src="@item.ImagePath" alt="" />
+                <div class="wd-post-info">
+                    <h3 class="post-title"><a asp-controller="Home" asp-action="Post" asp-route-id="@item.ID">@item.Title</a></h3>
+                    <span class="post-date">@item.CreatedDate</span>
+                </div>
+            </div>
+        }
+    </div>
+</div>
